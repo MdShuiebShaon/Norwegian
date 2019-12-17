@@ -32,9 +32,9 @@ public class guest_explores_stepdefinition implements guest_explores_propertise{
 	@And("^User navigated to Shore Excursion page$")
 	public void User_navigated_to_Shore_Excursion_page() throws InterruptedException{
 		Actions action = new Actions(driver);
-		action.moveToElement(driver.findElement(By.xpath("//a[@class='linkNav' and @title='Explore']"))).build().perform();
+		action.moveToElement(driver.findElement(By.xpath(Explore_Link))).build().perform();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[text()='Shore Excursions']")).click();
+		driver.findElement(By.xpath(Shore_Excursions)).click();
 
 	}
 
@@ -42,11 +42,11 @@ public class guest_explores_stepdefinition implements guest_explores_propertise{
 	@When("^User search for destination Alaska Cruises$")
 	public void User_search_for_destination_Alaska_Cruises() throws InterruptedException{
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[@id='search_destinations_chosen']//a[@class='chosen-single']")).click();
-		driver.findElement(By.xpath("//div[@id='search_destinations_chosen']//input[@class='chosen-search-input']")).sendKeys("Alaska Cruises");
+		driver.findElement(By.xpath(Destination_Search_Box)).click();
+		driver.findElement(By.xpath(Search_Box)).sendKeys("Alaska Cruises");
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[@class='btn-cta btn-primary btn-large search-submit']")).click();
+		driver.findElement(By.xpath(Find_Excursions)).click();
 	}
 
 	@Then("^Shore Excursions page is present$")
@@ -62,9 +62,9 @@ public class guest_explores_stepdefinition implements guest_explores_propertise{
 	@And("^Results are filtered by Alaska Cruises$")
 	public void Results_are_filtered_by_Alaska_Cruises() throws InterruptedException{
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//span[contains(text(),'Destination')]")).click();
+		driver.findElement(By.xpath(Destination_name)).click();
 
-		driver.findElement(By.xpath("//label[contains(text(),'Alaska Cruises')]")).click();
+		driver.findElement(By.xpath(Alaska_Cruise_Button)).click();
 
 		WebElement AlaskaCruises= driver.findElement(By.xpath("//span[@class='items-text']"));
 		Assert.assertEquals("Alaska Cruises", AlaskaCruises.getText());
@@ -73,9 +73,9 @@ public class guest_explores_stepdefinition implements guest_explores_propertise{
 	@Then("^Filter By Ports are only belong to Alaska, British Columbia$")
 	public void Filter_By_Ports_are_only_belong_to_Alaska_British_Columbia() throws InterruptedException {
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//span[contains(text(),'Port')]")).click();
+		driver.findElement(By.xpath(Port_name)).click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//span[contains(text(),'Port')]")).click();
+		driver.findElement(By.xpath(Port_name)).click();
 
 		WebElement VicBrishColumbia = driver.findElement(By.xpath(VicBrishColumbia_Name));
 		Assert.assertEquals("Victoria, British Columbia", VicBrishColumbia.getText());
