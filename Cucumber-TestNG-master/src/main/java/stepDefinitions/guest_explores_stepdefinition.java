@@ -1,19 +1,19 @@
 package stepDefinitions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
+
 import org.testng.Assert;
 
+import Properties.guest_explores_propertise;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class guest_explores_stepdefinition{
+public class guest_explores_stepdefinition implements guest_explores_propertise{
 
 	WebDriver driver;
 
@@ -38,23 +38,20 @@ public class guest_explores_stepdefinition{
 
 	}
 
-	//Reg Exp:
-	//1. \"([^\"]*)\"
-	//2. \"(.*)\"
 
 	@When("^User search for destination Alaska Cruises$")
 	public void User_search_for_destination_Alaska_Cruises() throws InterruptedException{
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[@id='search_destinations_chosen']//a[@class='chosen-single']")).click();
-    	driver.findElement(By.xpath("//div[@id='search_destinations_chosen']//input[@class='chosen-search-input']")).sendKeys("Alaska Cruises");
-    	
-    	Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[@id='search_destinations_chosen']//input[@class='chosen-search-input']")).sendKeys("Alaska Cruises");
+
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[@class='btn-cta btn-primary btn-large search-submit']")).click();
 	}
 
 	@Then("^Shore Excursions page is present$")
 	public void Shore_Excursions_page_is_present() {
-		
+
 		String getTitel = driver.getTitle();
 		System.out.println("Get titel is" + getTitel);
 		String ActuaTitel = "Shore Excursions | Norwegian Cruise Line";
@@ -66,9 +63,9 @@ public class guest_explores_stepdefinition{
 	public void Results_are_filtered_by_Alaska_Cruises() throws InterruptedException{
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//span[contains(text(),'Destination')]")).click();
-		
+
 		driver.findElement(By.xpath("//label[contains(text(),'Alaska Cruises')]")).click();
-		
+
 		WebElement AlaskaCruises= driver.findElement(By.xpath("//span[@class='items-text']"));
 		Assert.assertEquals("Alaska Cruises", AlaskaCruises.getText());
 	}
@@ -79,8 +76,8 @@ public class guest_explores_stepdefinition{
 		driver.findElement(By.xpath("//span[contains(text(),'Port')]")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//span[contains(text(),'Port')]")).click();
-		
-		WebElement VicBrishColumbia = driver.findElement(By.xpath("//label[contains(text(),'Victoria, British Columbia')]"));
+
+		WebElement VicBrishColumbia = driver.findElement(By.xpath(VicBrishColumbia_Name));
 		Assert.assertEquals("Victoria, British Columbia", VicBrishColumbia.getText());
 
 

@@ -53,49 +53,49 @@ formatter.match({
   "location": "guest_explores_stepdefinition.User_is_navigated_to_home_page()"
 });
 formatter.result({
-  "duration": 32243199700,
+  "duration": 41132151800,
   "status": "passed"
 });
 formatter.match({
   "location": "guest_explores_stepdefinition.User_navigated_to_Shore_Excursion_page()"
 });
 formatter.result({
-  "duration": 10456931500,
+  "duration": 13913156200,
   "status": "passed"
 });
 formatter.match({
   "location": "guest_explores_stepdefinition.User_search_for_destination_Alaska_Cruises()"
 });
 formatter.result({
-  "duration": 12906912500,
+  "duration": 19063960800,
   "status": "passed"
 });
 formatter.match({
   "location": "guest_explores_stepdefinition.Shore_Excursions_page_is_present()"
 });
 formatter.result({
-  "duration": 658535400,
+  "duration": 80238000,
   "status": "passed"
 });
 formatter.match({
   "location": "guest_explores_stepdefinition.Results_are_filtered_by_Alaska_Cruises()"
 });
 formatter.result({
-  "duration": 5723347400,
+  "duration": 5904996300,
   "status": "passed"
 });
 formatter.match({
   "location": "guest_explores_stepdefinition.Filter_By_Ports_are_only_belong_to_Alaska_British_Columbia()"
 });
 formatter.result({
-  "duration": 18333722000,
+  "duration": 20521808500,
   "status": "passed"
 });
 formatter.match({
   "location": "guest_explores_stepdefinition.close_the_browser()"
 });
 formatter.result({
-  "duration": 1223485900,
+  "duration": 1055942900,
   "status": "passed"
 });
 });

@@ -1,7 +1,9 @@
 package Properties;
 
-public class guest_explores_propertise {
+public interface guest_explores_propertise {
 	
+	
+	String VicBrishColumbia_Name = "//label[contains(text(),'Victoria, British Columbia')]";
 	
 	
 	
