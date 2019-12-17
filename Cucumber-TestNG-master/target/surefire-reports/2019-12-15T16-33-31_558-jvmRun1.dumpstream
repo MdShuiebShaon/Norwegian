@@ -1,0 +1,17 @@
+# Created on 2019-12-15T16:33:33.330
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Unknown Source)
+
+
+# Created on 2019-12-15T16:33:34.417
+Unexpected IOException: 5,1,MyRunner.TestRunner,feature(MyRunner.TestRunner),cucumber,null,null
+
+
+# Created on 2019-12-15T16:33:34.447
+Unexpected IOException with stream: Feature: Free CRM Login Feature
+
+
